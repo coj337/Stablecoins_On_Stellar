@@ -1,0 +1,7 @@
+C:\Users\cojwa\source\repos\StellarAnchor\bin\Debug\StellarAnchor.Views.dll
+C:\Users\cojwa\source\repos\StellarAnchor\bin\Debug\StellarAnchor.Views.pdb
+C:\Users\cojwa\source\repos\StellarAnchor\bin\Debug\StellarAnchor.dll
+C:\Users\cojwa\source\repos\StellarAnchor\bin\Debug\StellarAnchor.pdb
+C:\Users\cojwa\source\repos\StellarAnchor\obj\Debug\docker-compose.dcprojAssemblyReference.cache
+C:\Users\cojwa\source\repos\StellarAnchor\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\cojwa\source\repos\StellarAnchor\obj\Debug\docker-compose.dcproj.CopyComplete
