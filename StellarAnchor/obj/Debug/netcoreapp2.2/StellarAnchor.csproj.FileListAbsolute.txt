@@ -1,6 +1,3 @@
-C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.csproj.CoreCompileInputs.cache
-C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.AssemblyInfoInputs.cache
-C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.AssemblyInfo.cs
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\bin\Debug\netcoreapp2.2\StellarAnchor.deps.json
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\bin\Debug\netcoreapp2.2\StellarAnchor.runtimeconfig.json
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\bin\Debug\netcoreapp2.2\StellarAnchor.runtimeconfig.dev.json
@@ -8,8 +5,12 @@ C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\bin\Debug\netcoreapp2.2\
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\bin\Debug\netcoreapp2.2\StellarAnchor.pdb
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\bin\Debug\netcoreapp2.2\StellarAnchor.Views.dll
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\bin\Debug\netcoreapp2.2\StellarAnchor.Views.pdb
+C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.csprojAssemblyReference.cache
+C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.csproj.CoreCompileInputs.cache
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.RazorAssemblyInfo.cache
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.RazorAssemblyInfo.cs
+C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.AssemblyInfoInputs.cache
+C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.AssemblyInfo.cs
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.TagHelpers.input.cache
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.TagHelpers.output.cache
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.RazorCoreGenerate.cache
@@ -27,4 +28,3 @@ C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.dll
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.pdb
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.csproj.CopyComplete
-C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.csprojAssemblyReference.cache

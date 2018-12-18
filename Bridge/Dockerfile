@@ -17,7 +17,7 @@ ENV RECEIVING_ACCOUNT ${RECEIVING_ACCOUNT}
 WORKDIR /
 
 RUN mkdir -p /usr/share/man/man1/ && touch /usr/share/man/man1/sh.distrib.1.gz #Fix weird upgrade bug with sid-slim
-RUN apt-get update -y && apt-get dist-upgrade -y && apt-get install wget -y && apt-get install netcat-openbsd -y
+RUN apt-get update -y && apt-get dist-upgrade -y && apt-get -y install wget && apt-get -y install netcat-openbsd
 
 RUN wget -O bridge.tar.gz https://github.com/stellar/bridge-server/releases/download/v${BRIDGE_VERSION}/bridge-v${BRIDGE_VERSION}-linux-amd64.tar.gz
 

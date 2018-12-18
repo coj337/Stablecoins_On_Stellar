@@ -4,20 +4,20 @@ services:
   bridge:
     build:
       args:
-        BRIDGE_VERSION: ''
+        BRIDGE_VERSION: 0.0.31
       context: C:\Users\cojwa\source\repos\StellarAnchor\Bridge
     container_name: bridge
     depends_on:
     - bridge_db
     environment:
       DB_TYPE: mysql
-      DB_URI: dbuser:@/stellar_bridge
+      DB_URI: dbuser:dbuserpassword@/stellar_bridge
     networks:
       federation: null
   bridge_db:
     environment:
       MYSQL_DATABASE: stellar_bridge
-      MYSQL_PASSWORD: ''
+      MYSQL_PASSWORD: dbuserpassword
       MYSQL_RANDOM_ROOT_PASSWORD: 1
       MYSQL_USER: dbuser
     image: mysql:5.7
