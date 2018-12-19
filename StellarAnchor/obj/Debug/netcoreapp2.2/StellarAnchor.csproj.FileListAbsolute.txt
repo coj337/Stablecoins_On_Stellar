@@ -27,3 +27,4 @@ C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.dll
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.pdb
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.csproj.CopyComplete
+C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.csprojAssemblyReference.cache

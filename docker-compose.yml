@@ -116,8 +116,6 @@ services:
     container_name: federation
     build:  
       context: Federation
-      args:
-        FEDERATION_VERSION: ${FEDERATION_VERSION}
     depends_on:
       - federation_db
     environment:

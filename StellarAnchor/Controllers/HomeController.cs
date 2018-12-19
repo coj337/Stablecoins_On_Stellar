@@ -7,23 +7,22 @@ using Microsoft.AspNetCore.Mvc;
 using StellarAnchor.Models;
 using stellar_dotnet_sdk;
 using System.Net.Http;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace StellarAnchor.Controllers{
-    public class HomeController : Controller{
+    public class HomeController : Controller {
         private static readonly HttpClient client = new HttpClient();
 
-        public IActionResult Index(){
+        public IActionResult Index() {
             return View();
         }
 
-        public IActionResult Privacy(){
+        public IActionResult Privacy() {
             return View();
         }
 
-        public async Task<IActionResult> DoThing(){
-            Network.UseTestNetwork();
-            var server = new Server("https://horizon-testnet.stellar.org");
-
+        public async Task<IActionResult> MakePayment() {
             var issuePair = KeyPair.FromSecretSeed("SDXT6S752NXEZTZWNLZAWNIN4TGPHKWD3NS3RJSZPZ34EVZJW52C4AVG");
             var basePair = KeyPair.FromSecretSeed("SAWAFZCYEQPEYKGGNTHKHF5WCSYPXL5YI27M63YNWKJLTLCQY5M356CR");
 
@@ -38,7 +37,7 @@ namespace StellarAnchor.Controllers{
             return Json("Did the thing");
         }
 
-        private async Task<bool> MakePayment(KeyPair issuer, string baseId, string destination){
+        private async Task<bool> MakePayment(KeyPair issuer, string baseId, string destination) {
             var values = new Dictionary<string, string> {
                { "id", "unique_payment_id" },
                { "amount", "1" },
@@ -57,7 +56,7 @@ namespace StellarAnchor.Controllers{
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error(){
+        public IActionResult Error() {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
