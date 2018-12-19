@@ -24,6 +24,27 @@ services:
     networks:
       federation: null
     restart: always
+  compliance:
+    build:
+      args:
+        COMPLIANCE_VERSION: 0.0.30
+      context: C:\Users\cojwa\source\repos\StellarAnchor\Compliance
+    container_name: compliance
+    depends_on:
+    - compliance_db
+    environment:
+      DB_TYPE: mysql
+      DB_URI: dbuser:dbuserpassword@/stellar_compliance
+  compliance_db:
+    environment:
+      MYSQL_DATABASE: stellar_compliance
+      MYSQL_PASSWORD: dbuserpassword
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+      MYSQL_USER: dbuser
+    image: mysql:5.7
+    networks:
+      federation: null
+    restart: always
   db:
     environment:
       MYSQL_DATABASE: StellarAnchor
@@ -34,12 +55,34 @@ services:
     networks:
       federation: null
     restart: always
+  federation:
+    build:
+      args:
+        FEDERATION_VERSION: 0.2.1
+      context: C:\Users\cojwa\source\repos\StellarAnchor\Federation
+    container_name: federation
+    depends_on:
+    - federation_db
+    environment:
+      DB_TYPE: mysql
+      DB_URI: dbuser:dbuserpassword@/stellar_federation
+  federation_db:
+    environment:
+      MYSQL_DATABASE: stellar_federation
+      MYSQL_PASSWORD: dbuserpassword
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+      MYSQL_USER: dbuser
+    image: mysql:5.7
+    networks:
+      federation: null
+    restart: always
   stellaranchor:
     build:
       context: C:\Users\cojwa\source\repos\StellarAnchor
       dockerfile: StellarAnchor/Dockerfile
     depends_on:
     - bridge
+    - compliance
     - db
     environment:
       ASPNETCORE_ENVIRONMENT: Development

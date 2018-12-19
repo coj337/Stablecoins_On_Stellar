@@ -26,6 +26,4 @@ RUN chmod u+x federation
 
 COPY federation.cfg.sh .
 
-COPY migrate_db.sh .
-
-CMD until nc -z postgres_federation 5432; do sleep 1; done && sh federation.cfg.sh > federation.cfg && sh migrate_db.sh && ./federation
+CMD until nc -z federation_db 5432; do sleep 1; done && sh federation.cfg.sh > federation.cfg && ./federation

@@ -5,7 +5,6 @@ C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\bin\Debug\netcoreapp2.2\
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\bin\Debug\netcoreapp2.2\StellarAnchor.pdb
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\bin\Debug\netcoreapp2.2\StellarAnchor.Views.dll
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\bin\Debug\netcoreapp2.2\StellarAnchor.Views.pdb
-C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.csprojAssemblyReference.cache
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.csproj.CoreCompileInputs.cache
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.RazorAssemblyInfo.cache
 C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor\obj\Debug\netcoreapp2.2\StellarAnchor.RazorAssemblyInfo.cs

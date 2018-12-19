@@ -30,4 +30,4 @@ RUN chmod u+x compliance
 
 COPY compliance.cfg.sh .
 
-CMD until nc -z postgres_compliance 5432; do sleep 1; done && sh compliance.cfg.sh > compliance.cfg && ./compliance --migrate-db && ./compliance
+CMD until nc -z compliance_db 5432; do sleep 1; done && sh compliance.cfg.sh > compliance.cfg && ./compliance --migrate-db && ./compliance
