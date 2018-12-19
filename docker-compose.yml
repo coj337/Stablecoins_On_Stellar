@@ -47,8 +47,8 @@ services:
     depends_on:
       - db
       - bridge
+      - compliance
       #- federation
-      #- compliance
       #- ledger
     networks:
       - federation
@@ -86,5 +86,51 @@ services:
       MYSQL_DATABASE: stellar_bridge
       MYSQL_USER: dbuser
       MYSQL_PASSWORD: ${BRIDGE_DB_PASSWORD}
+    networks:
+      - federation
+
+  compliance:
+    container_name: compliance
+    build:  
+      context: Compliance
+      args:
+        COMPLIANCE_VERSION: ${COMPLIANCE_VERSION}
+    depends_on:
+      - compliance_db
+    environment:
+      DB_TYPE: mysql
+      DB_URI: dbuser:${COMPLIANCE_DB_PASSWORD}@/stellar_compliance
+
+  compliance_db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+      MYSQL_DATABASE: stellar_compliance
+      MYSQL_USER: dbuser
+      MYSQL_PASSWORD: ${COMPLIANCE_DB_PASSWORD}
+    networks:
+      - federation
+
+  federation:
+    container_name: federation
+    build:  
+      context: Federation
+      args:
+        FEDERATION_VERSION: ${FEDERATION_VERSION}
+    depends_on:
+      - federation_db
+    environment:
+      DB_TYPE: mysql
+      DB_URI: dbuser:${FEDERATION_DB_PASSWORD}@/stellar_federation
+
+  federation_db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+      MYSQL_DATABASE: stellar_federation
+      MYSQL_USER: dbuser
+      MYSQL_PASSWORD: ${FEDERATION_DB_PASSWORD}
     networks:
       - federation

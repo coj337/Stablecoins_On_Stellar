@@ -24,6 +24,27 @@ services:
     networks:
       federation: null
     restart: always
+  compliance:
+    build:
+      args:
+        COMPLIANCE_VERSION: ''
+      context: C:\Users\cojwa\source\repos\StellarAnchor\Compliance
+    container_name: compliance
+    depends_on:
+    - compliance_db
+    environment:
+      DB_TYPE: mysql
+      DB_URI: dbuser:@/stellar_compliance
+  compliance_db:
+    environment:
+      MYSQL_DATABASE: stellar_compliance
+      MYSQL_PASSWORD: ''
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+      MYSQL_USER: dbuser
+    image: mysql:5.7
+    networks:
+      federation: null
+    restart: always
   db:
     environment:
       MYSQL_DATABASE: StellarAnchor
@@ -41,6 +62,7 @@ services:
       target: base
     depends_on:
     - bridge
+    - compliance
     - db
     entrypoint: tail -f /dev/null
     environment:

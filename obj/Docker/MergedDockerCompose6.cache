@@ -24,6 +24,27 @@ services:
     networks:
       federation: null
     restart: always
+  compliance:
+    build:
+      args:
+        COMPLIANCE_VERSION: ''
+      context: C:\Users\cojwa\source\repos\StellarAnchor\Compliance
+    container_name: compliance
+    depends_on:
+    - compliance_db
+    environment:
+      DB_TYPE: mysql
+      DB_URI: dbuser:@/stellar_compliance
+  compliance_db:
+    environment:
+      MYSQL_DATABASE: stellar_compliance
+      MYSQL_PASSWORD: ''
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+      MYSQL_USER: dbuser
+    image: mysql:5.7
+    networks:
+      federation: null
+    restart: always
   db:
     environment:
       MYSQL_DATABASE: StellarAnchor
@@ -34,29 +55,40 @@ services:
     networks:
       federation: null
     restart: always
+  federation:
+    build:
+      args:
+        FEDERATION_VERSION: ''
+      context: C:\Users\cojwa\source\repos\StellarAnchor\Federation
+    container_name: federation
+    depends_on:
+    - compliance_db
+    environment:
+      DB_TYPE: mysql
+      DB_URI: dbuser:@/stellar_compliance
+  federation_db:
+    environment:
+      MYSQL_DATABASE: stellar_federation
+      MYSQL_PASSWORD: ''
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+      MYSQL_USER: dbuser
+    image: mysql:5.7
+    networks:
+      federation: null
+    restart: always
   stellaranchor:
     build:
       context: C:\Users\cojwa\source\repos\StellarAnchor
       dockerfile: StellarAnchor/Dockerfile
-      target: base
     depends_on:
     - bridge
+    - compliance
     - db
-    entrypoint: tail -f /dev/null
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_HTTPS_PORT: '44307'
       ASPNETCORE_URLS: https://+:443;http://+:80
-      DOTNET_USE_POLLING_FILE_WATCHER: '1'
-      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
-    image: stellaranchor:dev
-    labels:
-      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
-        --additionalProbingPath /root/.nuget/fallbackpackages  bin/Debug/netcoreapp2.2/StellarAnchor.dll'
-      com.microsoft.visualstudio.debuggee.killprogram: /bin/bash -c "if PID=$$(pidof
-        -x dotnet); then kill $$PID; fi"
-      com.microsoft.visualstudio.debuggee.program: dotnet
-      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    image: stellaranchor
     networks:
       federation: null
     ports:
@@ -65,10 +97,6 @@ services:
     - published: 44307
       target: 443
     volumes:
-    - C:\Users\cojwa\source\repos\StellarAnchor\StellarAnchor:/app:rw
-    - C:\Users\cojwa\vsdbg\vs2017u5:/remote_debugger:ro
     - C:\Users\cojwa\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
     - C:\Users\cojwa\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
-    - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
-    - C:\Users\cojwa\.nuget\packages:/root/.nuget/packages:ro
 version: '3.4'
